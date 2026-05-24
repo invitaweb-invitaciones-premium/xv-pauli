@@ -89,9 +89,9 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--tex
 .invite-date{display:inline-block;margin-top:20px;background:linear-gradient(135deg,rgba(90,172,220,0.12),rgba(212,96,122,0.08));border:1px solid rgba(90,172,220,0.3);border-radius:50px;padding:10px 24px;font-family:'Playfair Display',serif;font-size:17px;color:var(--sky);letter-spacing:2px;}
 
 /* COUNTDOWN */
-.countdown-grid{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px;}
-.count-box{background:rgba(255,255,255,0.95);border:1px solid rgba(90,172,220,0.35);border-radius:16px;padding:22px 20px;min-width:80px;box-shadow:0 4px 20px rgba(90,172,220,0.18);}
-.count-num{font-family:'Playfair Display',serif;font-size:clamp(44px,11vw,68px);font-weight:600;
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:30px;max-width:360px;margin-left:auto;margin-right:auto;}
+.count-box{background:rgba(255,255,255,0.95);border:1px solid rgba(90,172,220,0.35);border-radius:14px;padding:14px 8px;box-shadow:0 4px 20px rgba(90,172,220,0.18);}
+.count-num{font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,48px);font-weight:600;
   background:linear-gradient(135deg,var(--sky),var(--rose));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   line-height:1;display:block;}
@@ -100,7 +100,12 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--tex
 
 /* MOOD */
 .mood-grid{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px;}
+.mood-grid-vertical{flex-direction:column;align-items:stretch;max-width:420px;margin-left:auto;margin-right:auto;}
 .mood-btn{background:rgba(255,255,255,0.8);border:1px solid rgba(90,172,220,0.2);border-radius:16px;padding:22px 18px;min-width:110px;flex:1;max-width:155px;cursor:pointer;transition:all .25s;font-family:'Cormorant Garamond',serif;color:var(--text2);text-align:center;box-shadow:0 2px 12px rgba(90,172,220,0.06);}
+.mood-grid-vertical .mood-btn{max-width:100%;display:flex;align-items:center;gap:18px;padding:22px 24px;text-align:left;}
+.mood-grid-vertical .mood-icon{font-size:36px;flex-shrink:0;margin-bottom:0;}
+.mood-grid-vertical .mood-label{font-size:20px;font-weight:500;}
+.mood-grid-vertical .mood-hint{font-size:13px;}
 .mood-btn:hover{background:rgba(90,172,220,0.08);border-color:rgba(90,172,220,0.48);transform:translateY(-3px);box-shadow:0 6px 20px rgba(90,172,220,0.15);}
 .mood-btn.selected{background:linear-gradient(135deg,rgba(90,172,220,0.12),rgba(212,96,122,0.08));border-color:var(--sky);color:var(--text);}
 .mood-icon{font-size:30px;display:block;margin-bottom:9px;}
@@ -109,11 +114,11 @@ body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--tex
 #mood-response{margin-top:18px;font-style:italic;font-size:18px;color:var(--rose);min-height:26px;transition:opacity .4s;}
 
 /* LUGAR / MAPA */
-.lugar-info{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin:26px 0;}
-.lugar-detail{text-align:center;background:rgba(255,255,255,0.85);border:1px solid rgba(90,172,220,0.22);border-radius:16px;padding:18px 22px;box-shadow:0 2px 14px rgba(90,172,220,0.1);min-width:110px;}
+.lugar-info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px auto;max-width:500px;}
+.lugar-detail{text-align:center;background:rgba(255,255,255,0.85);border:1px solid rgba(90,172,220,0.22);border-radius:14px;padding:14px 8px;box-shadow:0 2px 14px rgba(90,172,220,0.1);}
 .ld-icon{font-size:24px;display:block;margin-bottom:5px;}
 .ld-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;color:var(--sky);text-transform:uppercase;display:block;margin-bottom:5px;}
-.ld-val{font-size:clamp(18px,4.5vw,24px);font-weight:600;color:var(--dark);font-family:'Playfair Display',serif;}
+.ld-val{font-size:clamp(13px,3.2vw,18px);font-weight:600;color:var(--dark);font-family:'Playfair Display',serif;}
 .map-wrap{max-width:520px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(90,172,220,0.25);box-shadow:0 4px 24px rgba(90,172,220,0.1);}
 
 /* FORMS */
@@ -149,7 +154,7 @@ textarea.rsvp-input{resize:vertical;min-height:80px;}
 .slide-nav button:hover{background:rgba(90,172,220,0.12);border-color:var(--sky);}
 
 /* DRESS CODE */
-.dress-grid{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:26px;}
+.dress-grid{display:flex;justify-content:center;gap:24px;flex-wrap:nowrap;margin-top:26px;}
 .dress-card{background:rgba(255,255,255,0.8);border:1px solid rgba(90,172,220,0.18);border-radius:16px;padding:22px 15px;flex:1;max-width:140px;min-width:98px;box-shadow:0 2px 12px rgba(90,172,220,0.06);}
 .dress-swatch{width:50px;height:50px;border-radius:50%;margin:0 auto 12px;border:2px solid rgba(90,172,220,0.25);}
 .dress-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--text);display:block;margin-bottom:3px;}
@@ -197,8 +202,22 @@ footer{position:relative;z-index:2;padding:60px 24px 40px;text-align:center;back
 /* RESPONSIVE */
 @media(max-width:480px){
   .section{padding:56px 16px;}
-  .mood-btn{max-width:calc(50% - 8px);flex:0 0 calc(50% - 8px);}
-  .dress-card{max-width:calc(50% - 8px);flex:0 0 calc(50% - 8px);}
   .messages-grid{grid-template-columns:1fr;}
-  .lugar-info{gap:18px;}
+  .countdown-grid{gap:6px;max-width:100%;}
+  .lugar-info{gap:6px;}
+  .ld-val{font-size:12px;}
+  .ld-label{font-size:9px;letter-spacing:2px;}
+  .ld-icon{font-size:18px;}
+  .dress-grid{gap:16px;}
 }
+
+/* RSVP MULTI-PERSONA */
+.rsvp-person-form{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(90,172,220,0.15);}
+.rsvp-person-form:last-child{border-bottom:none;margin-bottom:0;}
+.rsvp-person-label{font-family:'Raleway',sans-serif;font-size:12px;letter-spacing:3px;color:var(--sky);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;}
+.btn-add-person{background:transparent;border:1.5px dashed rgba(90,172,220,0.5);border-radius:12px;color:var(--sky);padding:13px 20px;font-family:'Playfair Display',serif;font-size:16px;cursor:pointer;width:100%;transition:all .2s;letter-spacing:1px;}
+.btn-add-person:hover{background:rgba(90,172,220,0.06);border-color:var(--sky);}
+.btn-remove-person{background:none;border:1px solid rgba(212,96,122,0.3);border-radius:20px;color:var(--rose);font-size:10px;padding:2px 8px;cursor:pointer;letter-spacing:1px;font-family:'Raleway',sans-serif;}
+/* MURO LOAD MORE */
+.btn-load-more{background:transparent;border:1.5px solid rgba(90,172,220,0.4);border-radius:50px;color:var(--sky);padding:12px 28px;font-family:'Playfair Display',serif;font-size:16px;cursor:pointer;transition:all .2s;letter-spacing:1px;}
+.btn-load-more:hover{background:rgba(90,172,220,0.08);border-color:var(--sky);}
