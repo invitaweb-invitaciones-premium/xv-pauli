@@ -72,14 +72,14 @@
 <h2 class="sec-title">¿Cómo llegás a la fiesta?</h2>
 <div class="gold-line"></div>
 <div class="mood-grid mood-grid-vertical">
-<button class="mood-btn" onclick="selectMood(this,'¡Así me gusta! ¡Con toda la energía! 💃')">
-<span class="mood-icon">💃</span><span class="mood-label">Con ganas de bailar</span><span class="mood-hint">no para nada</span>
+<button class="mood-btn mood-btn-centered" onclick="selectMood(this,'¡Así me gusta! ¡Con toda la energía! 💃')">
+<span class="mood-icon">💃</span><span class="mood-label">Con ganas de bailar</span>
 </button>
-<button class="mood-btn" onclick="selectMood(this,'Perfecto, también hay lugar para descansar 😌')">
-<span class="mood-icon">😌</span><span class="mood-label">Tranquilo/a</span><span class="mood-hint">a disfrutar</span>
+<button class="mood-btn mood-btn-centered" onclick="selectMood(this,'Perfecto, también hay lugar para descansar 😌')">
+<span class="mood-icon">😌</span><span class="mood-label">Tranquilo/a</span>
 </button>
-<button class="mood-btn" onclick="selectMood(this,'¡¡MODO BESTIA ACTIVADO!! 🔥🎉')">
-<span class="mood-icon">🔥</span><span class="mood-label">Modo fiesta total</span><span class="mood-hint">sin filtros</span>
+<button class="mood-btn mood-btn-centered" onclick="selectMood(this,'¡¡MODO BESTIA ACTIVADO!! 🔥🎉')">
+<span class="mood-icon">🔥</span><span class="mood-label">Modo fiesta total</span>
 </button>
 </div>
 <p id="mood-response"></p>
@@ -222,16 +222,13 @@
 <h2 class="sec-title">Si deseás regalarme<br/>algo más que tu presencia</h2>
 <div class="gold-line"></div>
 <p class="sec-body">Tu presencia ya es el mejor regalo. Pero si querés sorprenderme… 🎁</p>
-<button class="regalo-btn" onclick="showRegalo(this)">Ver datos de transferencia 💛</button>
-<div class="regalo-reveal" id="regalo-reveal">
-<div class="cuenta-card">
+<div class="cuenta-card" style="margin-top:26px;">
 <div class="cuenta-row"><span class="cuenta-key">Banco</span><span class="cuenta-val">Banco República</span></div>
 <div class="cuenta-row"><span class="cuenta-key">Titular</span><span class="cuenta-val">Paulina ——</span></div>
 <div class="cuenta-row"><span class="cuenta-key">Cuenta</span><span class="cuenta-val">···· ···· ···· ····</span></div>
 <div class="cuenta-row"><span class="cuenta-key">Alias</span><span class="cuenta-val">PAULI.XV</span></div>
 </div>
 <p style="margin-top:12px;font-style:italic;font-size:13px;color:var(--text3);">* Reemplazá estos datos con los reales en el código</p>
-</div>
 </section>
 <!-- ═══ COMPARTIR ═══ -->
 <section class="section s-rose">
@@ -251,7 +248,7 @@
 <div class="gold-line"></div>
 <p class="footer-sub">Mis Quince Años · 5 de Junio</p>
 <div class="ornament" style="margin-top:18px;">🌸</div>
-<p class="footer-dev">Desarrollado con amor por <a href="#" target="_blank">Ibitaweb</a></p>
+<p class="footer-dev">Desarrollado con amor por <a href="https://instagram.com/invitaweb" target="_blank">InvitaWeb</a></p>
 </footer>
 <script>
 const RSVP_URL   = 'https://script.google.com/macros/s/AKfycby2bw_PEi1w4SXfk_TTuOe9Qt4-QoPeKziPu39IPRhcY4eWBf8t-KB4WMZ339tUosrSmA/exec';
@@ -295,18 +292,21 @@ function toggleMusic(){
   const icon=document.getElementById('musicIcon');
   const lbl=document.getElementById('musicLabel');
   const anim=document.getElementById('audioAnim');
-  const floatWidget=document.getElementById('music-float');
+  const floatBtn=document.getElementById('music-float');
+  const floatIcon=document.getElementById('float-icon');
   if(!playing){
     a.play().catch(()=>{});
     icon.textContent='⏸'; lbl.textContent='Pausar música';
     anim.classList.add('show');
-    floatWidget.style.display='flex';
+    floatBtn.style.display='flex';
+    if(floatIcon) floatIcon.textContent='⏸';
     playing=true;
   }else{
     a.pause();
     icon.textContent='▶'; lbl.textContent='Reanudar música';
     anim.classList.remove('show');
-    floatWidget.style.display='none';
+    floatBtn.style.display='flex'; // sigue visible para poder reanudar
+    if(floatIcon) floatIcon.textContent='▶';
     playing=false;
   }
 }
@@ -474,7 +474,7 @@ function renderMessages(reset){
 }
 function showMoreMessages(){
   msgVisible += MSG_PAGE;
-  renderMessages(true);
+  renderMessages();
 }
 
 /* REGALOS */
@@ -485,24 +485,14 @@ function showRegalo(btn){
 </script>
 
 <!-- MUSIC FLOAT WIDGET -->
-<div id="music-float" style="display:none;position:fixed;bottom:22px;right:22px;z-index:1000;
-  background:rgba(255,255,255,0.92);border:1px solid rgba(90,172,220,0.35);border-radius:50px;
-  padding:10px 18px 10px 14px;display:none;align-items:center;gap:10px;
-  box-shadow:0 4px 20px rgba(90,172,220,0.2);backdrop-filter:blur(8px);cursor:pointer;
-  font-family:Raleway,sans-serif;font-size:12px;color:var(--text2);letter-spacing:1px;
-  transition:box-shadow .2s;">
-  <div id="float-bars" style="display:flex;align-items:flex-end;gap:2px;height:16px;">
-    <div style="width:3px;background:var(--sky);border-radius:2px;animation:barB .8s ease-in-out infinite;animation-delay:0s;"></div>
-    <div style="width:3px;background:var(--rose);border-radius:2px;animation:barB .8s ease-in-out infinite;animation-delay:.15s;"></div>
-    <div style="width:3px;background:var(--sky);border-radius:2px;animation:barB .8s ease-in-out infinite;animation-delay:.3s;"></div>
-    <div style="width:3px;background:var(--rose);border-radius:2px;animation:barB .8s ease-in-out infinite;animation-delay:.15s;"></div>
-    <div style="width:3px;background:var(--sky);border-radius:2px;animation:barB .8s ease-in-out infinite;animation-delay:0s;"></div>
-  </div>
-  <span id="float-label" style="white-space:nowrap;">Perfect · Ed Sheeran</span>
-  <button onclick="toggleMusic()" id="float-stop" style="background:none;border:1px solid rgba(90,172,220,0.4);
-    border-radius:50%;width:26px;height:26px;cursor:pointer;color:var(--sky);font-size:13px;
-    display:flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;"
-    title="Detener música">⏹</button>
-</div>
+<button id="music-float" onclick="toggleMusic()" title="Reproducir / Pausar música"
+  style="display:none;position:fixed;bottom:22px;right:22px;z-index:1000;
+  width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--sky),var(--rose));
+  box-shadow:0 4px 20px rgba(90,172,220,0.35);
+  align-items:center;justify-content:center;font-size:22px;
+  transition:transform .2s,box-shadow .2s;">
+  <span id="float-icon">⏸</span>
+</button>
 </body>
 </html>
