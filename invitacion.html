@@ -10,16 +10,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Raleway:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
 
-<link href="styles.css" rel="stylesheet"/>
-<style>
-/* RSVP party emoji burst */
-.party-burst{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:10;}
-.party-emoji{
-  position:absolute;font-size:22px;
-  animation:noteFly 1.6s ease-out forwards;opacity:0;
-  top:50%;left:50%;
-}
-</style></head>
+<link href="styles.css" rel="stylesheet"/></head>
 <body>
 <div id="petals"></div>
 <audio id="bg-audio" loop="">
@@ -130,11 +121,14 @@
 <p class="sheet-loading" id="rsvp-loading">Enviando...</p>
 </div>
 </div>
-<div class="success-box" id="rsvp-success" style="position:relative;overflow:visible;">
-  <div class="party-burst" id="party-burst"></div>
-  <span class="success-icon">🌸</span>
-  <p class="success-msg" id="rsvp-thanks-msg"></p>
-  <button class="btn-add-more" onclick="showAddMore()">¿Olvidaste a alguien? Agregar más →</button>
+<div class="success-box" id="rsvp-success" style="position:relative;">
+  <div class="music-burst" id="party-burst"></div>
+  <div class="song-success-content">
+    <div class="vinyl-spin" id="rsvp-main-emoji">🎉</div>
+    <p class="song-success-headline">¡Confirmado!</p>
+    <p class="success-msg" id="rsvp-thanks-msg"></p>
+    <button class="btn-add-more" onclick="showAddMore()">¿Olvidaste a alguien? Agregar más →</button>
+  </div>
 </div>
 <div id="rsvp-add-more" style="display:none;max-width:420px;margin:20px auto 0;">
   <div id="rsvp-extra-container"></div>
@@ -283,9 +277,10 @@
 <p class="footer-dev">Desarrollado con amor por <a href="https://www.instagram.com/invitaweb.uy/" target="_blank">InvitaWeb</a></p>
 </footer>
 <script>
-const RSVP_URL   = 'https://script.google.com/macros/s/AKfycby2bw_PEi1w4SXfk_TTuOe9Qt4-QoPeKziPu39IPRhcY4eWBf8t-KB4WMZ339tUosrSmA/exec';
-const SONG_URL   = 'https://script.google.com/macros/s/AKfycbwihVxnTMyxjVmnY-t0No33_3AevM8NCIVOHHYjIyl0JQ2nB4KIGzhMf7et7EvwhIkz/exec';
-const WALL_URL   = 'https://script.google.com/macros/s/AKfycbxCaXE3C5wKMLF_wX_gRmzpaJHUsHrGMh-nxW_STA-od3k9UpepJ0_OFmLWIS_dCV-lzw/exec';
+const RSVP_URL   = 'https://script.google.com/macros/s/AKfycbyi6a5xI08bsREtnfmGYhNfFPGB_bNEKlNDGRyHwrM_zT0jf7yCLWRuNT-dA-_wqRsHQw/exec';
+const SONG_URL   = 'https://script.google.com/macros/s/AKfycbzy2UsSYHw_9uILyC051JPQ9Bj5VAA-uxVh5SOUbpsgLlyWz7xuh8jjueIz0KiTCna6/exec';
+const WALL_URL   = 'https://script.google.com/macros/s/AKfycby2T5ARFPa6JnvJi9KG8gLJfTowxAut2ldMXVoBoAovnlavERXnBylis9NxJnGqiFxN6Q/exec';
+const TOKEN      = 'paulina2025xv';
 
 /* PÉTALOS */
 (function(){
@@ -437,7 +432,7 @@ async function submitRSVP(){
   const loading=document.getElementById('rsvp-loading');
   btn.disabled=true; loading.classList.add('show');
   for(const p of personas){
-    await fetch(RSVP_URL,{method:'POST',body:JSON.stringify({nombre:p.name,extra:p.dato,timestamp:new Date().toLocaleString('es-UY')})}).catch(()=>{});
+    await fetch(RSVP_URL,{method:'POST',body:JSON.stringify({nombre:p.name,extra:p.dato,timestamp:new Date().toLocaleString('es-UY'),token:TOKEN})}).catch(()=>{});
   }
   loading.classList.remove('show');
   document.getElementById('rsvp-wrap').style.display='none';
@@ -454,7 +449,7 @@ async function submitSong(){
   const artist=document.getElementById('song-artist').value.trim();
   const yt=document.getElementById('song-yt').value.trim();
   if(!name||!artist){alert('Por favor ingresá la canción y el artista.');return;}
-  await sendToSheet(SONG_URL,{nombre:name+' - '+artist,extra:yt,timestamp:new Date().toLocaleString('es-UY')},'song-btn','song-loading');
+  await sendToSheet(SONG_URL,{nombre:name+' - '+artist,extra:yt,timestamp:new Date().toLocaleString('es-UY'),token:TOKEN},'song-btn','song-loading');
   document.getElementById('cancion-wrap').style.display='none';
   document.getElementById('song-success').style.display='block';
   setTimeout(launchMusicNotes, 100);
@@ -482,7 +477,7 @@ async function submitMessage(){
   const author=document.getElementById('msg-author').value.trim();
   const text=document.getElementById('msg-text').value.trim();
   if(!author||!text){alert('Por favor completá tu nombre y mensaje.');return;}
-  await sendToSheet(WALL_URL,{nombre:author,mensaje:text,timestamp:new Date().toLocaleString('es-UY')},'msg-btn','msg-loading');
+  await sendToSheet(WALL_URL,{nombre:author,mensaje:text,timestamp:new Date().toLocaleString('es-UY'),token:TOKEN},'msg-btn','msg-loading');
   localMessages.push({author,text,time:new Date()});
   document.getElementById('msg-author').value='';
   document.getElementById('msg-text').value='';
@@ -546,7 +541,7 @@ async function submitExtra(){
   const loading=document.getElementById('rsvp-extra-loading');
   btn.disabled=true; loading.classList.add('show');
   for(const p of personas){
-    await fetch(RSVP_URL,{method:'POST',body:JSON.stringify({nombre:p.name,extra:p.dato,timestamp:new Date().toLocaleString('es-UY')})}).catch(()=>{});
+    await fetch(RSVP_URL,{method:'POST',body:JSON.stringify({nombre:p.name,extra:p.dato,timestamp:new Date().toLocaleString('es-UY'),token:TOKEN})}).catch(()=>{});
   }
   loading.classList.remove('show');
   document.getElementById('rsvp-add-more').style.display='none';
@@ -567,15 +562,15 @@ function launchPartyEmojis(){
   if(!burst) return;
   burst.innerHTML='';
   const emojis=['🎉','🎊','💃','🕺','🥂','🎈','💫','🎀','🌟','🎁','✨','🌸'];
-  for(let i=0;i<28;i++){
+  for(let i=0;i<18;i++){
     const el=document.createElement('div');
-    el.className='party-emoji';
+    el.className='music-note';
     const angle=Math.random()*360;
-    const dist=80+Math.random()*160;
+    const dist=70+Math.random()*160;
     const tx=Math.cos(angle*Math.PI/180)*dist+'px';
     const ty=Math.sin(angle*Math.PI/180)*dist+'px';
     const rot=(Math.random()-0.5)*180+'deg';
-    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${20+Math.random()*18}px;`;
+    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${18+Math.random()*18}px;`;
     el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
     burst.appendChild(el);
   }
