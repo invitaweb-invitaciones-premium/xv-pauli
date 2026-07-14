@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mis XV – Paulina</title>
-<meta content="Mis XV – Paulina 🌸" property="og:title"/>
-<meta content="¡Estás invitado/a a mis XV años! Jueves 5 de Junio · 21:00 hs · Granja Colonia" property="og:description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Raleway:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-
-<link href="styles.css" rel="stylesheet"/></head>
+<title>Mis XV – Natalí</title>
+<meta content="Mis XV – Natalí 🌹" property="og:title"/>
+<meta content="¡Estás invitado/a a mis XV años! Sábado 19 de Septiembre · 21:00 hs" property="og:description"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Raleway:wght@300;400;500&family=Dancing+Script:wght@600;700&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+<link href="styles-natali.css" rel="stylesheet"/>
+</head>
 <body>
 <div id="petals"></div>
+
 <audio id="bg-audio" loop="">
-<source src="https://www.dropbox.com/scl/fi/ehjotuprtsx8vl22t01s5/Ed-Sheeran-Perfect.mp3?rlkey=2dh03h3hcytiv7m80mpddvq2r&amp;raw=1" type="audio/mpeg"/>
+<source src="https://www.dropbox.com/scl/fi/njytjrwm84ooabxcv031c/First-And-Last.mp3?rlkey=8yayfjhcy9pgx694c803c0l59&raw=1" type="audio/mpeg"/>
 </audio>
+
 <!-- ═══ HERO ═══ -->
 <section id="hero">
 <div id="hero-bg-photo"></div>
+<span class="hero-corner tl">❧</span>
+<span class="hero-corner tr">❧</span>
+<span class="hero-corner bl">❧</span>
+<span class="hero-corner br">❧</span>
 <div class="hero-badge">✦ una noche especial ✦</div>
-<h1 class="hero-name">Paulina</h1>
+<h1 class="hero-name">Natalí</h1>
 <p class="hero-pre">Mis</p>
 <div class="hero-xv">XV</div>
 <p class="hero-anos">años</p>
+<div class="hero-divider"></div>
 <div class="music-btn-wrap">
 <div class="music-card">
-<p style="text-align:center;">🎵 La música de fondo<br/>es parte de la experiencia</p>
+<p>🎵 La música de fondo<br/>es parte de la experiencia</p>
 <button class="btn-music" id="musicBtn" onclick="toggleMusic()">
 <span id="musicIcon">▶</span>
 <span id="musicLabel">Ingresar con música</span>
@@ -37,22 +42,24 @@
 <div class="bar-anim" style="animation-delay:.24s;height:13px;"></div>
 <div class="bar-anim" style="animation-delay:.12s;height:9px;"></div>
 <div class="bar-anim" style="animation-delay:0s;height:5px;"></div>
-<span style="margin-left:8px;">Perfect · Ed Sheeran</span>
+<span style="margin-left:8px;">First And Last · ABOUT</span>
 </div>
 </div>
 </div>
 </section>
+
 <!-- ═══ INVITACIÓN ═══ -->
 <section class="section s-dark" id="invitacion">
 <span class="sec-tag">una invitación especial</span>
-<h2 class="sec-title">Paulina<br/><em style="font-size:.8em;color:var(--sky);">Mis XV Años</em></h2>
+<h2 class="sec-title"><span style="color:var(--fucsia-lila);">Natalí</span><br/><em style="font-size:.8em;color:var(--gold);">Mis XV Años</em></h2>
 <div class="gold-line"></div>
 <div class="invite-card">
 <p class="invite-who">Con todo el amor del mundo</p>
 <p class="invite-text">Tengo el enorme placer de invitarte a acompañarme a celebrar este día tan especial e importante en mi vida.<br/><br/>Quiero compartir este momento único contigo.</p>
-<div class="invite-date">Jueves 5 de Junio · 21:00 hs</div>
+<div class="invite-date">Sábado 19 de Septiembre · 21:00 hs</div>
 </div>
 </section>
+
 <!-- ═══ COUNTDOWN ═══ -->
 <section class="section" id="countdown-section">
 <span class="sec-tag">el gran momento</span>
@@ -64,8 +71,9 @@
 <div class="count-box"><span class="count-num" id="cd-mins">--</span><span class="count-label">Min</span></div>
 <div class="count-box"><span class="count-num" id="cd-secs">--</span><span class="count-label">Seg</span></div>
 </div>
-<div id="event-arrived">🎉 ¡Esta noche es la noche! 🎉</div>
+<div id="event-arrived">🌹 ¡Esta noche es la noche! 🌹</div>
 </section>
+
 <!-- ═══ MOOD ═══ -->
 <section class="section s-rose">
 <span class="sec-tag">contanos</span>
@@ -78,32 +86,43 @@
 <button class="mood-btn mood-btn-centered" onclick="selectMood(this,'Perfecto, también hay lugar para descansar 😌')">
 <span class="mood-icon">😌</span><span class="mood-label">Tranquilo/a</span>
 </button>
-<button class="mood-btn mood-btn-centered" onclick="selectMood(this,'¡¡MODO BESTIA ACTIVADO!! 🔥🎉')">
+<button class="mood-btn mood-btn-centered" onclick="selectMood(this,'¡Genial, va a ser una noche a pura fiesta! 🎉🔥')">
 <span class="mood-icon">🔥</span><span class="mood-label">Modo fiesta total</span>
 </button>
 </div>
 <p id="mood-response"></p>
 </section>
+
 <!-- ═══ LUGAR ═══ -->
 <section class="section s-dark">
 <span class="sec-tag">fecha y lugar</span>
 <h2 class="sec-title">La fiesta</h2>
 <div class="gold-line"></div>
 <div class="lugar-info">
-<div class="lugar-detail"><span class="ld-icon">📅</span><span class="ld-label">Fecha</span><span class="ld-val">Jueves 5 de Junio</span></div>
+<div class="lugar-detail"><span class="ld-icon">📅</span><span class="ld-label">Fecha</span><span class="ld-val">Sábado 19 de Septiembre</span></div>
 <div class="lugar-detail"><span class="ld-icon">🕘</span><span class="ld-label">Hora</span><span class="ld-val">21:00 hs</span></div>
-<div class="lugar-detail"><span class="ld-icon">📍</span><span class="ld-label">Lugar</span><span class="ld-val">Granja Colonia</span></div>
+<div class="lugar-detail"><span class="ld-icon">📍</span><span class="ld-label">Lugar</span><span class="ld-val">Chacra Paso del Sauce</span></div>
 </div>
-<div class="map-wrap">
-<iframe allowfullscreen="" height="280" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.685437477045!2d-57.740736999999996!3d-34.4347445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a30c7c1a34ffbd%3A0x6a4ad1bd16b728e4!2sGranja%20Colonia!5e0!3m2!1ses-419!2suy!4v1768006159809!5m2!1ses-419!2suy" style="border:0;display:block;" width="100%"></iframe>
+<p style="margin-top:6px;font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(14px,3.4vw,17px);color:var(--text2);">Camino Paso del Sauce</p>
+<div class="map-embed-wrap">
+<iframe src="https://www.google.com/maps?q=Camino+Paso+del+Sauce&output=embed" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<a class="btn-add-more" style="display:inline-block;margin-top:14px;text-decoration:none;" href="https://www.google.com/maps/search/?api=1&query=Camino+Paso+del+Sauce" target="_blank">📍 Abrir en Google Maps</a>
+<div class="music-sign-wrap">
+  <div class="music-sign">
+    <span class="music-sign-icon">🎶</span>
+    <span class="music-sign-text">¡Habrá música<br/>en vivo toda la noche!</span>
+    <span class="music-sign-icon">🎶</span>
+  </div>
 </div>
 </section>
+
 <!-- ═══ RSVP ═══ -->
 <section class="section">
 <span class="sec-tag">confirmación</span>
 <h2 class="sec-title">Me gustaría contar<br/>con tu presencia</h2>
 <div class="gold-line"></div>
-<p class="sec-body">Confirmá tu asistencia antes del <strong style="color:var(--sky)">20 de Mayo</strong></p>
+<p class="sec-body">Confirmá tu asistencia antes del <strong style="color:var(--gold)">1 de Septiembre</strong></p>
 <div id="rsvp-wrap">
 <div id="rsvp-forms-container">
 <div class="rsvp-form rsvp-person-form" id="rsvp-form-0">
@@ -113,15 +132,18 @@
 </div>
 </div>
 <div style="max-width:420px;margin:12px auto 0;display:flex;gap:10px;flex-direction:column;">
+<div style="position:relative;">
+  <div class="party-burst" id="party-burst"></div>
+  <button class="btn-gold" id="rsvp-btn" onclick="submitRSVP()">Confirmar asistencia ✨</button>
+</div>
 <button class="btn-add-person" id="btn-add-person" onclick="addRSVPPerson()">✦ Agregar otra persona</button>
-<button class="btn-gold" id="rsvp-btn" onclick="submitRSVP()">Confirmar asistencia ✨</button>
 <p class="sheet-loading" id="rsvp-loading">Enviando...</p>
 </div>
 </div>
 <div class="success-box" id="rsvp-success" style="position:relative;">
-  <div class="music-burst" id="party-burst"></div>
+  <div class="music-burst" id="party-burst-success"></div>
   <div class="song-success-content">
-    <div class="vinyl-spin" id="rsvp-main-emoji">🎉</div>
+    <div class="vinyl-spin">🌹</div>
     <p class="song-success-headline">¡Confirmado!</p>
     <p class="success-msg" id="rsvp-thanks-msg"></p>
     <button class="btn-add-more" onclick="showAddMore()">¿Olvidaste a alguien? Agregar más →</button>
@@ -136,6 +158,7 @@
   </div>
 </div>
 </section>
+
 <!-- ═══ SLIDESHOW ═══ -->
 <section class="section s-dark" id="slideshow-section">
 <span class="sec-tag">un recorrido</span>
@@ -144,23 +167,21 @@
 <p class="sec-body">Cada foto, un momento. Cada momento, parte de quien soy hoy.</p>
 <div class="slides-wrap">
 <div class="slide active">
-<div class="slide-photo"><img src="img/foto1.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+<div class="slide-frame"><div class="slide-photo"><img alt="Foto 1" onerror="handleSlideImgError(this,1)" src="img/foto-1.jpg"/></div></div>
 </div>
 <div class="slide">
-<div class="slide-photo"><img src="img/foto2.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+<div class="slide-frame"><div class="slide-photo"><img alt="Foto 2" onerror="handleSlideImgError(this,2)" src="img/foto-2.jpg"/></div></div>
 </div>
 <div class="slide">
-<div class="slide-photo"><img src="img/foto3.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+<div class="slide-frame"><div class="slide-photo"><img alt="Foto 3" onerror="handleSlideImgError(this,3)" src="img/foto-3.jpg"/></div></div>
 </div>
 <div class="slide">
-<div class="slide-photo"><img src="img/foto4.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+<div class="slide-frame"><div class="slide-photo"><img alt="Foto 4" onerror="handleSlideImgError(this,4)" src="img/foto-4.jpg"/></div></div>
 </div>
 <div class="slide">
-<div class="slide-photo"><img src="img/foto5.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
-</div>
-<div class="slide">
-<div class="slide-photo" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;">
-<img src="img/foto6.jpg" alt="Paulina" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+<div class="slide-frame slide-frame-featured">
+<span class="slide-featured-ribbon">✦ así soy hoy ✦</span>
+<div class="slide-photo slide-photo-featured"><img alt="Foto 5" onerror="handleSlideImgError(this,5)" src="img/foto-5.jpg"/></div>
 </div>
 </div>
 </div>
@@ -170,6 +191,7 @@
 <button onclick="changeSlide(1)">→</button>
 </div>
 </section>
+
 <!-- ═══ CANCIÓN ═══ -->
 <section class="section s-rose">
 <span class="sec-tag">la playlist</span>
@@ -194,58 +216,60 @@
   </div>
 </div>
 </section>
+
 <!-- ═══ DRESS CODE ═══ -->
 <section class="section s-dark">
 <span class="sec-tag">vestimenta</span>
 <h2 class="sec-title">Orientación para tu vestuario</h2>
 <div class="gold-line"></div>
-<p class="sec-body">Vengan con todo su estilo. Solo hay dos colores reservados 💫</p>
-<div class="dress-grid" style="justify-content:center;gap:28px;">
+<p class="sec-body">La dress code es <strong style="color:var(--gold)">formal</strong>. Vengan con todo su elegancia ✨</p>
+<div class="dress-grid" style="justify-content:center;">
 <div class="dress-card">
-  <div class="dress-swatch" style="background:#ffffff;border:2px solid #ddd;"></div>
-  <span class="dress-name" style="color:var(--rose);">Blanco</span>
+  <div class="dress-swatch" style="background:#b5737a;border:2px solid rgba(181,115,122,.4);"></div>
+  <span class="dress-name" style="color:var(--rose-old);">Rosa viejo</span>
   <span class="dress-hint">reservado para la festejada</span>
 </div>
-<div class="dress-card">
-  <div class="dress-swatch" style="background:#111111;"></div>
-  <span class="dress-name" style="color:var(--rose);">Negro</span>
-  <span class="dress-hint">preferimos evitarlo</span>
 </div>
-</div>
-<p class="dress-avoid" style="margin-top:22px;font-size:17px;">Por favor evitá el <strong>blanco</strong> y el <strong>negro</strong> ✨</p>
+<p class="dress-avoid" style="margin-top:22px;font-size:17px;">Por favor evitá el <strong>rosa viejo</strong> ✨</p>
 </section>
+
 <!-- ═══ MURO MENSAJES ═══ -->
 <section class="section">
 <span class="sec-tag">mensajes</span>
-<h2 class="sec-title">Dejá tu mensaje<br/>para Paulina</h2>
+<h2 class="sec-title">Dejá tu mensaje<br/>para Natalí</h2>
 <div class="gold-line"></div>
 <p class="sec-body" style="margin-bottom:26px;">Un muro de amor para esta noche tan especial 💌</p>
 <div class="wall-form">
 <div><label class="field-label">Tu nombre</label><input class="rsvp-input" id="msg-author" placeholder="¿Quién lo manda?" type="text"/></div>
-<div><label class="field-label">Tu mensaje</label><textarea class="rsvp-input" id="msg-text" placeholder="Escribí algo hermoso para Pauli... 💛" rows="3"></textarea></div>
+<div><label class="field-label">Tu mensaje</label><textarea class="rsvp-input" id="msg-text" placeholder="Escribí algo hermoso para Natalí... 💛" rows="3"></textarea></div>
 <button class="btn-gold" id="msg-btn" onclick="submitMessage()">Publicar mensaje 💌</button>
 <p class="sheet-loading" id="msg-loading">Enviando...</p>
 </div>
 <div class="messages-grid" id="messages-grid"></div>
-<p id="no-msgs" style="font-style:italic;color:var(--text3);margin-top:14px;font-size:16px;">Sé el primero en dejar un mensaje 💛</p>
+<p id="no-msgs" style="font-style:italic;color:var(--text3);margin-top:14px;font-size:16px;">Sé el primero en dejar un mensaje 🌹</p>
 <div id="load-more-wrap" style="display:none;margin-top:18px;">
 <button class="btn-load-more" id="load-more-btn" onclick="showMoreMessages()">Ver más mensajes 💌</button>
 </div>
 </section>
+
 <!-- ═══ REGALOS ═══ -->
 <section class="section s-dark">
 <span class="sec-tag">regalos</span>
 <h2 class="sec-title">Si deseás regalarme<br/>algo más que tu presencia</h2>
 <div class="gold-line"></div>
 <p class="sec-body">Tu presencia ya es el mejor regalo. Pero si querés sorprenderme… 🎁</p>
-<div class="cuenta-card" style="margin-top:26px;">
-<div class="cuenta-row"><span class="cuenta-key">Banco</span><span class="cuenta-val">Banco República</span></div>
-<div class="cuenta-row"><span class="cuenta-key">Titular</span><span class="cuenta-val">Paulina ——</span></div>
-<div class="cuenta-row"><span class="cuenta-key">Cuenta</span><span class="cuenta-val">···· ···· ···· ····</span></div>
-<div class="cuenta-row"><span class="cuenta-key">Alias</span><span class="cuenta-val">PAULI.XV</span></div>
+<div class="cuenta-card">
+<div class="cuenta-row"><span class="cuenta-key">Banco</span><span class="cuenta-val">A confirmar</span></div>
+<div class="cuenta-row"><span class="cuenta-key">Titular</span><span class="cuenta-val">Natalí ——</span></div>
+<div class="cuenta-row"><span class="cuenta-key">Cuenta</span><span class="cuenta-val">XXX-XXXX-XXXX</span></div>
+<div class="cuenta-row"><span class="cuenta-key">Alias</span><span class="cuenta-val">NATALI.XV</span></div>
 </div>
-<p style="margin-top:12px;font-style:italic;font-size:13px;color:var(--text3);"></p>
+<div style="margin-top:20px;max-width:400px;margin-left:auto;margin-right:auto;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.25);border-radius:14px;padding:20px 18px;text-align:center;">
+  <p style="font-size:22px;margin-bottom:8px;">🎀</p>
+  <p style="font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,3.5vw,18px);color:var(--text2);line-height:1.7;">También en el cumpleaños habrá<br/>una <strong style="color:var(--gold);font-style:normal;">caja de regalos</strong><br/>donde podés dejar tu presente 💛</p>
+</div>
 </section>
+
 <!-- ═══ COMPARTIR ═══ -->
 <section class="section s-rose">
 <span class="sec-tag">después de la fiesta</span>
@@ -253,37 +277,42 @@
 <div class="gold-line"></div>
 <div class="compartir-card">
 <p style="font-size:17px;line-height:1.75;color:var(--text2);font-style:italic;">Compartí tus fotos y videos de esta noche hermosa 📸✨</p>
-<a class="ig-link" href="https://instagram.com/invitaweb.uy" target="_blank">📸 @invitaweb.uy</a>
-<p style="margin-top:12px;font-size:13px;color:var(--text3);font-style:italic;">Usá el hashtag <strong style="color:var(--sky)">#XVPaulina</strong></p>
+<a class="ig-link" href="https://www.instagram.com/invitaweb.uy/" target="_blank">📸 @invitaweb.uy</a>
+<p style="margin-top:12px;font-size:13px;color:var(--text3);font-style:italic;">Usá el hashtag <strong style="color:var(--gold)">#XVNatalí</strong></p>
 </div>
 </section>
+
 <!-- ═══ FOOTER ═══ -->
 <footer>
-<div class="ornament">✦ ✦ ✦</div>
-<p class="footer-name">Paulina</p>
+<div class="ornament">❧ ✦ ❧</div>
+<p class="footer-name">Natalí</p>
 <div class="gold-line"></div>
-<p class="footer-sub">Mis Quince Años · 5 de Junio</p>
-<div class="ornament" style="margin-top:18px;">🌸</div>
+<p class="footer-sub">MIS QUINCE AÑOS · 19 DE SEPTIEMBRE</p>
+<div class="ornament" style="margin-top:18px;">🌹</div>
 <p class="footer-dev">Desarrollado con amor por <a href="https://www.instagram.com/invitaweb.uy/" target="_blank">InvitaWeb</a></p>
 </footer>
+
 <script>
-const RSVP_URL   = 'https://script.google.com/macros/s/AKfycbyi6a5xI08bsREtnfmGYhNfFPGB_bNEKlNDGRyHwrM_zT0jf7yCLWRuNT-dA-_wqRsHQw/exec';
-const SONG_URL   = 'https://script.google.com/macros/s/AKfycbzy2UsSYHw_9uILyC051JPQ9Bj5VAA-uxVh5SOUbpsgLlyWz7xuh8jjueIz0KiTCna6/exec';
-const WALL_URL   = 'https://script.google.com/macros/s/AKfycby2T5ARFPa6JnvJi9KG8gLJfTowxAut2ldMXVoBoAovnlavERXnBylis9NxJnGqiFxN6Q/exec';
-const TOKEN      = 'paulina2025xv';
+const RSVP_URL = 'REEMPLAZAR_CON_URL_RSVP';
+const SONG_URL = 'REEMPLAZAR_CON_URL_CANCION';
+const WALL_URL = 'REEMPLAZAR_CON_URL_MURO';
+const TOKEN    = 'natali2026xv';
 
 /* PÉTALOS */
 (function(){
   const c=document.getElementById('petals');
-  const cols=['#a8d8f0','#e8a0b4','#5aacdc','#f0c8d8','#90ccee','#d4607a','#b8e0f4'];
+  const cols=['#e8c766','#f5deb3','#fff8dc','#d4af37','#ffffff','#c0c0c0','#f0e68c'];
   for(let i=0;i<30;i++){
     const p=document.createElement('div'); p.className='petal';
-    const s=7+Math.random()*10;
-    p.style.cssText=['left:'+(Math.random()*100)+'vw','width:'+s+'px','height:'+(s*1.4)+'px',
+    const s=6+Math.random()*9;
+    const shapes=['50%','2px','60% 40% 55% 35%'];
+    p.style.cssText=[
+      'left:'+(Math.random()*100)+'vw',
+      'width:'+s+'px','height:'+(s*1.35)+'px',
       'background:'+cols[Math.floor(Math.random()*cols.length)],
-      'animation-duration:'+(4+Math.random()*7)+'s',
-      'animation-delay:'+(Math.random()*10)+'s',
-      'border-radius:'+(48+Math.random()*20)+'% '+(38+Math.random()*20)+'% '+(52+Math.random()*18)+'% '+(34+Math.random()*18)+'%'
+      'border-radius:'+shapes[Math.floor(Math.random()*shapes.length)],
+      'animation-duration:'+(5+Math.random()*7)+'s',
+      'animation-delay:'+(Math.random()*10)+'s'
     ].join(';');
     c.appendChild(p);
   }
@@ -292,11 +321,14 @@ const TOKEN      = 'paulina2025xv';
 /* SPARKLES */
 (function(){
   const h=document.getElementById('hero');
-  for(let i=0;i<18;i++){
+  for(let i=0;i<16;i++){
     const s=document.createElement('div'); s.className='hero-sparkle';
-    s.style.cssText=['left:'+(10+Math.random()*80)+'%','top:'+(10+Math.random()*80)+'%',
+    s.style.cssText=[
+      'left:'+(10+Math.random()*80)+'%','top:'+(10+Math.random()*80)+'%',
       'width:'+(1+Math.random()*2.5)+'px','height:'+(1+Math.random()*2.5)+'px',
-      'animation-duration:'+(2+Math.random()*4)+'s','animation-delay:'+(Math.random()*4)+'s'
+      'background:var(--gold)',
+      'animation-duration:'+(2+Math.random()*4)+'s',
+      'animation-delay:'+(Math.random()*4)+'s'
     ].join(';');
     h.appendChild(s);
   }
@@ -329,9 +361,9 @@ function toggleMusic(){
   }
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN — 19 de Septiembre 2026 a las 21hs */
 (function(){
-  const target=new Date('2026-06-05T21:00:00');
+  const target=new Date('2026-09-19T21:00:00');
   const grid=document.getElementById('countdownGrid');
   const arrived=document.getElementById('event-arrived');
   const title=document.getElementById('countdownTitle');
@@ -355,6 +387,11 @@ function selectMood(btn,msg){
   setTimeout(()=>{r.textContent=msg;r.style.opacity=1;},200);
 }
 
+/* Muestra un ícono de reemplazo si la foto del carrusel todavía no fue subida a la carpeta img/ */
+function handleSlideImgError(img,n){
+  img.parentElement.innerHTML='<div class="slide-photo-placeholder"><span>🌹</span><span>foto '+n+'</span></div>';
+}
+
 /* SLIDESHOW */
 (function(){
   const slides=document.querySelectorAll('.slide');
@@ -375,49 +412,43 @@ function selectMood(btn,msg){
   window.changeSlide=n=>goTo(current+n);
 })();
 
-/* UTIL FETCH A SHEETS */
-async function sendToSheet(url, data, btnId, loadingId){
+/* UTIL FETCH SHEETS */
+async function sendToSheet(url,data,btnId,loadingId){
   const btn=document.getElementById(btnId);
   const loading=document.getElementById(loadingId);
   btn.disabled=true; loading.classList.add('show');
-  try{
-    // Sin Content-Type header: evita preflight CORS con Google Apps Script
-    await fetch(url,{method:'POST',body:JSON.stringify(data)});
-  }catch(e){console.warn('Sheet error',e);}
+  try{ await fetch(url,{method:'POST',body:JSON.stringify(data)}); }
+  catch(e){console.warn('Sheet error',e);}
   loading.classList.remove('show');
 }
 
 /* RSVP */
-let rsvpPersonCount = 1;
+let rsvpPersonCount=1;
 function addRSVPPerson(){
-  const container = document.getElementById('rsvp-forms-container');
-  const idx = rsvpPersonCount;
-  const div = document.createElement('div');
-  div.className = 'rsvp-form rsvp-person-form';
-  div.id = 'rsvp-form-'+idx;
-  div.innerHTML = `
+  const container=document.getElementById('rsvp-forms-container');
+  const idx=rsvpPersonCount;
+  const div=document.createElement('div');
+  div.className='rsvp-form rsvp-person-form'; div.id='rsvp-form-'+idx;
+  div.innerHTML=`
     <p class="rsvp-person-label">Persona ${idx+1} <button onclick="removeRSVPPerson(${idx})" class="btn-remove-person">✕ quitar</button></p>
     <div><label class="field-label">Nombre completo</label><input class="rsvp-input rsvp-name-input" placeholder="Nombre completo" type="text"/></div>
     <div><label class="field-label">Dato importante (opcional)</label><input class="rsvp-input rsvp-dato-input" placeholder="Ej: soy vegetariano/a, tiene alergia..." type="text"/></div>
   `;
-  container.appendChild(div);
-  rsvpPersonCount++;
+  container.appendChild(div); rsvpPersonCount++;
 }
 function removeRSVPPerson(idx){
-  const el = document.getElementById('rsvp-form-'+idx);
-  if(el) el.remove();
+  const el=document.getElementById('rsvp-form-'+idx); if(el)el.remove();
 }
 async function submitRSVP(){
-  const forms = document.querySelectorAll('.rsvp-person-form');
-  const personas = [];
-  let allValid = true;
-  forms.forEach((form,i)=>{
-    const name = form.querySelector('.rsvp-name-input').value.trim();
-    const dato = form.querySelector('.rsvp-dato-input').value.trim();
-    if(!name){ allValid=false; form.querySelector('.rsvp-name-input').focus(); }
+  const forms=document.querySelectorAll('#rsvp-forms-container .rsvp-person-form');
+  const personas=[]; let allValid=true;
+  forms.forEach(form=>{
+    const name=form.querySelector('.rsvp-name-input').value.trim();
+    const dato=form.querySelector('.rsvp-dato-input').value.trim();
+    if(!name){allValid=false; form.querySelector('.rsvp-name-input').focus();}
     else personas.push({name,dato});
   });
-  if(!allValid){ alert('Por favor ingresá el nombre de todas las personas.'); return; }
+  if(!allValid){alert('Por favor ingresá el nombre de todas las personas.');return;}
   const btn=document.getElementById('rsvp-btn');
   const loading=document.getElementById('rsvp-loading');
   btn.disabled=true; loading.classList.add('show');
@@ -427,10 +458,10 @@ async function submitRSVP(){
   loading.classList.remove('show');
   document.getElementById('rsvp-wrap').style.display='none';
   const suc=document.getElementById('rsvp-success'); suc.style.display='block';
-  const nombres = personas.map(p=>p.name).join(', ');
-  document.getElementById('rsvp-thanks-msg').textContent='¡Gracias! Asistencia confirmada para: '+nombres+'. ¡Los esperamos con todo! 🌸';
-  setTimeout(launchPartyEmojis, 100);
-  setTimeout(launchPartyEmojis, 600);
+  const nombres=personas.map(p=>p.name).join(', ');
+  document.getElementById('rsvp-thanks-msg').textContent='¡Gracias! Asistencia confirmada para: '+nombres+'. ¡Los esperamos con todo! 🌹';
+  setTimeout(launchPartyEmojis,100);
+  setTimeout(launchPartyEmojis,600);
 }
 
 /* CANCIÓN */
@@ -442,26 +473,23 @@ async function submitSong(){
   await sendToSheet(SONG_URL,{nombre:name+' - '+artist,extra:yt,timestamp:new Date().toLocaleString('es-UY'),token:TOKEN},'song-btn','song-loading');
   document.getElementById('cancion-wrap').style.display='none';
   document.getElementById('song-success').style.display='block';
-  setTimeout(launchMusicNotes, 100);
+  setTimeout(launchMusicNotes,100);
 }
 
 /* MURO */
 const localMessages=[];
-
-// Cargar mensajes existentes desde Sheets al cargar la página
 (async function loadMessages(){
   try{
-    const res = await fetch(WALL_URL);
-    const data = await res.json();
+    const res=await fetch(WALL_URL);
+    const data=await res.json();
     if(Array.isArray(data)){
       data.forEach(row=>{
-        if(row.nombre && row.mensaje){
-          localMessages.push({author:row.nombre, text:row.mensaje, time:new Date(row.timestamp||Date.now())});
-        }
+        if(row.nombre&&row.mensaje)
+          localMessages.push({author:row.nombre,text:row.mensaje,time:new Date(row.timestamp||Date.now())});
       });
       renderMessages();
     }
-  }catch(e){ /* silencioso si falla */ }
+  }catch(e){}
 })();
 async function submitMessage(){
   const author=document.getElementById('msg-author').value.trim();
@@ -474,10 +502,9 @@ async function submitMessage(){
   document.getElementById('msg-btn').disabled=false;
   renderMessages();
 }
-const MSG_PAGE = 5;
-let msgVisible = MSG_PAGE;
+const MSG_PAGE=5; let msgVisible=MSG_PAGE;
 function renderMessages(reset){
-  if(reset) msgVisible = MSG_PAGE;
+  if(reset) msgVisible=MSG_PAGE;
   const grid=document.getElementById('messages-grid');
   const noMsg=document.getElementById('no-msgs');
   const loadWrap=document.getElementById('load-more-wrap');
@@ -486,17 +513,12 @@ function renderMessages(reset){
   grid.innerHTML='';
   sorted.slice(0,msgVisible).forEach(m=>{
     const d=document.createElement('div'); d.className='msg-card';
-    const t=m.time instanceof Date ? m.time : new Date(m.time);
-    const min=t.getMinutes().toString().padStart(2,'0');
     d.innerHTML=`<p class="msg-author">${m.author}</p><p class="msg-text">"${m.text}"</p>`;
     grid.appendChild(d);
   });
-  if(loadWrap) loadWrap.style.display = (sorted.length > msgVisible) ? 'block' : 'none';
+  if(loadWrap) loadWrap.style.display=(sorted.length>msgVisible)?'block':'none';
 }
-function showMoreMessages(){
-  msgVisible += MSG_PAGE;
-  renderMessages();
-}
+function showMoreMessages(){ msgVisible+=MSG_PAGE; renderMessages(); }
 
 /* RSVP EXTRA */
 function showAddMore(){
@@ -519,8 +541,7 @@ function addExtraPerson(){
 }
 async function submitExtra(){
   const forms=document.querySelectorAll('#rsvp-extra-container .rsvp-person-form');
-  const personas=[];
-  let allValid=true;
+  const personas=[]; let allValid=true;
   forms.forEach(form=>{
     const name=form.querySelector('.rsvp-name-input').value.trim();
     const dato=form.querySelector('.rsvp-dato-input').value.trim();
@@ -537,50 +558,36 @@ async function submitExtra(){
   document.getElementById('rsvp-add-more').style.display='none';
   const nombres=personas.map(p=>p.name).join(', ');
   const msg=document.getElementById('rsvp-thanks-msg');
-  msg.textContent+=' • También confirmado: '+nombres+' 🌸';
+  msg.textContent+=' • También confirmado: '+nombres+' 🌹';
 }
 
-/* REGALOS */
-function showRegalo(btn){
-  document.getElementById('regalo-reveal').classList.add('show');
-  btn.style.display='none';
-}
-
-/* ═══ ANIMACIÓN RSVP: emojis de celebración ═══ */
+/* ANIMACIÓN RSVP */
 function launchPartyEmojis(){
   const burst=document.getElementById('party-burst');
-  if(!burst) return;
-  burst.innerHTML='';
-  const emojis=['🎉','🎊','💃','🕺','🥂','🎈','💫','🎀','🌟','🎁','✨','🌸'];
+  if(!burst) return; burst.innerHTML='';
+  const emojis=['🌹','🎉','💫','🎊','👑','🥂','🎈','✨','🎀','🌟'];
   for(let i=0;i<18;i++){
-    const el=document.createElement('div');
-    el.className='music-note';
-    const angle=Math.random()*360;
-    const dist=70+Math.random()*160;
-    const tx=Math.cos(angle*Math.PI/180)*dist+'px';
-    const ty=Math.sin(angle*Math.PI/180)*dist+'px';
-    const rot=(Math.random()-0.5)*180+'deg';
-    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${18+Math.random()*18}px;`;
+    const el=document.createElement('div'); el.className='music-note';
+    const angle=Math.random()*360, dist=70+Math.random()*160;
+    const tx=Math.cos(angle*Math.PI/180)*dist+'px', ty=Math.sin(angle*Math.PI/180)*dist+'px';
+    const rot=(Math.random()-.5)*180+'deg';
+    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${16+Math.random()*18}px;`;
     el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
     burst.appendChild(el);
   }
 }
 
-/* ═══ ANIMACIÓN CANCIÓN: notas ═══ */
+/* ANIMACIÓN CANCIÓN */
 function launchMusicNotes(){
   const burst=document.getElementById('music-burst');
-  if(!burst) return;
-  burst.innerHTML='';
+  if(!burst) return; burst.innerHTML='';
   const notes=['🎵','🎶','🎸','🎹','🎤','✨','🎼','💫'];
   for(let i=0;i<18;i++){
-    const el=document.createElement('div');
-    el.className='music-note';
-    const angle=Math.random()*360;
-    const dist=70+Math.random()*160;
-    const tx=Math.cos(angle*Math.PI/180)*dist+'px';
-    const ty=Math.sin(angle*Math.PI/180)*dist+'px';
-    const rot=(Math.random()-0.5)*180+'deg';
-    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${18+Math.random()*18}px;`;
+    const el=document.createElement('div'); el.className='music-note';
+    const angle=Math.random()*360, dist=70+Math.random()*160;
+    const tx=Math.cos(angle*Math.PI/180)*dist+'px', ty=Math.sin(angle*Math.PI/180)*dist+'px';
+    const rot=(Math.random()-.5)*180+'deg';
+    el.style.cssText=`--tx:${tx};--ty:${ty};--rot:${rot};animation-delay:${Math.random()*.4}s;font-size:${16+Math.random()*18}px;`;
     el.textContent=notes[Math.floor(Math.random()*notes.length)];
     burst.appendChild(el);
   }
@@ -591,16 +598,14 @@ function launchMusicNotes(){
 <button id="music-float" onclick="toggleMusic()" title="Reproducir / Pausar música"
   style="display:none;position:fixed;bottom:22px;right:22px;z-index:1000;
   width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;
-  background:linear-gradient(135deg,var(--sky),var(--rose));
-  box-shadow:0 4px 20px rgba(90,172,220,0.4);
+  background:linear-gradient(135deg,var(--gold),var(--rose-old));
+  box-shadow:0 4px 20px rgba(201,169,110,0.4);
   align-items:center;justify-content:center;
   transition:transform .2s,box-shadow .2s;padding:0;">
-  <!-- PAUSE icon (dos barras) -->
   <svg id="float-pause-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" style="display:block;">
     <rect x="5" y="4" width="4" height="16" rx="1.5"/>
     <rect x="15" y="4" width="4" height="16" rx="1.5"/>
   </svg>
-  <!-- PLAY icon (triángulo) -->
   <svg id="float-play-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" style="display:none;margin-left:3px;">
     <polygon points="5,3 19,12 5,21"/>
   </svg>
